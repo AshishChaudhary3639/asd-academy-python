@@ -1,22 +1,22 @@
 # Single Inheritance
-class Parent:
-    name="Microsoft"
+# class Parent:
+#     name="Microsoft"
 
-    def show_parent(self):
-        print("This is a Parent Class")
+#     def show_parent(self):
+#         print("This is a Parent Class")
 
-class Child(Parent):
-    # name="Microsoft"
+# class Child(Parent):
+#     # name="Microsoft"
 
-    # def show_parent(self):
-    #     print("This is a Parent Class")
+#     # def show_parent(self):
+#     #     print("This is a Parent Class")
 
-    def show_child(self):
-        print(f"This is a Child class{self.name}")
+#     def show_child(self):
+#         print(f"This is a Child class{self.name}")
 
-obj2=Child()
-obj2.show_child()
-obj2.show_parent()
+# obj2=Child()
+# obj2.show_child()
+# obj2.show_parent()
 # print(obj2.name)
  
 #Mutiple Inheritance
@@ -124,3 +124,45 @@ obj2.show_parent()
 # print("Hello")
 
 # print("p1 + p2 =", p3)
+
+# class Animal:
+#     def speak(self):
+#         print("Animal makes a sound!")
+# # Child class (Dog)
+# class Dog(Animal):
+#     def speak(self):
+#         print("Dog barks!")
+# # Child class (Cat)
+# class Cat(Animal):
+#     def speak(self):
+#         print("Cat meows!")
+# # Creating objects
+# animal=Animal()
+# dog = Dog()
+# cat = Cat()
+# # Polymorphism in action
+# dog.speak() # Output: Dog barks!
+# cat.speak() # Output: Cat meows
+# animal.speak()
+
+class BankAccount:
+    company="Microsoft" #Public Attribute
+    def __init__ (self, balance):
+        self.__balance = balance # private attribute
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+            print(f"Deposited {amount}. New balance:{self. balance}")
+    def get_balance(self):
+        return self.__balance # Public method to access private balance
+    
+# Creating an object of BankAccount
+account = BankAccount(1000)
+# Accessing balance using public method
+print(account.get_balance()) # Output: 1000
+# Trying to access the private balance directly will raise an error
+account.company="Google"
+print(account.company)
+print(account.__balance) # This will give an AttributeError
+# Using the deposit method to modify balance
+# account.deposit(500) # Output: Deposited 500. New balance: 1500
