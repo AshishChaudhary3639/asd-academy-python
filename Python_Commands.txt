@@ -1,0 +1,13 @@
+to create an environment--------------->py -m venv env
+to install requirements file---------->pip install -r  requirements.txt
+to run an environment-----------> env\Scripts\activate
+to enter the app--------->cd app
+to run the server---------->python manag.py runserver 
+to create an app----------->python manage.py startapp  <app-name>
+to make migrations---------> python manage.py makemigrations <table-name> <app name>
+to migrate------------------>python manage.py migrate<table-name>
+to make graphapi of an app------>python manage.py startgrapheneapp <app-name>
+to install an app----->pip install <app-name>   (pip install django-templated-email==3.0.0)
+to view all packages installed along with version number>pip freeze
+to view the list of packages installed-------->pip list
+ 

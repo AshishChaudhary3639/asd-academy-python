@@ -6,20 +6,38 @@ import json
 base_url = "https://jsonplaceholder.typicode.com/posts"
 
 # 2. GET request to fetch data (Reading from REST API)
-print("GET Request Example:")
-response = requests.get(f"{base_url}/1")
-# print(response.text)
-if response.status_code == 200:
-    print(response.text) #To check JSON format data
-    post_data = response.json()  # Parsing JSON
-    print(post_data)
-    print("Title:", post_data['title'])
-    print("User ID",post_data['userId'])
-    print("Body:", post_data['body'])
-else:
-    print("Failed to GET data")
+# print("GET Request Example:")
+# response = requests.get(f"{base_url}/1")
+# # print(response.text)
+# if response.status_code == 200:
+#     print(response.text) #To check JSON format data
+#     post_data = response.json()  # Parsing JSON
+#     print(post_data)
+#     print("Title:", post_data['title'])
+#     print("User ID",post_data['userId'])
+#     print("Body:", post_data['body'])
+# else:
+#     print("Failed to GET data")
 
-print("\n" + "-"*50 + "\n")
+# print("\n" + "-"*50 + "\n")
+
+
+# response = requests.get(base_url)
+
+# if response.status_code == 200:
+#     all_posts = response.json()  # a list of 100 dictionaries
+#     print(f"Total posts: {len(all_posts)}\n")
+
+#     # Print first 3 posts only to avoid clutter
+#     for post in all_posts[:3]:
+#         print("Post ID:", post["id"])
+#         print("User ID:", post["userId"])
+#         print("Title:", post["title"])
+#         print("Body:", post["body"])
+#         print("-" * 50)
+# else:
+#     print("Failed to fetch posts")
+
 
 # 3. POST request to create data (Sending JSON to REST API)
 # print("POST Request Example:")
@@ -86,21 +104,21 @@ print("\n" + "-"*50 + "\n")
 
 # import json
 
-# # Python dictionary (Python object)
-# person = {
-#     "name": "Asif",
-#     "age": 30,
-#     "skills": ["Python", "Django"]
-# }
-# print("Dictionary Format=",person)
-# # # 1. Convert Python object to JSON string using json.dumps()
-# person_json = json.dumps(person, indent=4)
-# print("JSON String (using dumps):")
-# print(person_json)
+# Python dictionary (Python object)
+person = {
+    "name": "Asif",
+    "age": 30,
+    "skills": ["Python", "Django"]
+}
+print("Dictionary Format=",person)
+# 1. Convert Python object to JSON string using json.dumps()
+person_json = json.dumps(person, indent=4)
+print("JSON String (using dumps):")
+print(type(person_json))
 
-# # print("\n" + "-"*50 + "\n")
+print("\n" + "-"*50 + "\n")
 
 # # # # # 2. Convert JSON string back to Python object using json.loads()
-# person_dict = json.loads(person_json)
-# print("Python Dictionary (using loads):")
-# print(person_dict)
+person_dict = json.loads(person_json)
+print("Python Dictionary (using loads):")
+print(type(person_dict))
