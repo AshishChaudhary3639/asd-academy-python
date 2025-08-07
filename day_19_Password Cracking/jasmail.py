@@ -1,0 +1,57 @@
+import tkinter as tk # JASMAIL SINGH BRAR
+input_var = ""
+def input1(num):
+    global input_var
+    input_var = input_var + str(num)
+    show.set(input_var)
+def nume():
+    global input_var
+    total=str(eval(input_var))
+    show.set(total)
+    input_var=""
+def numc():
+    global input_var
+    input_var=""
+    show.set("")
+root=tk.Tk()
+root.title("Simple Calculator")
+root.geometry("355x343")
+root.resizable(False,False)
+show=tk.StringVar()
+dis=tk.Entry(root,textvariable=show,font="arial 35 bold")
+dis.pack(fill=tk.X)
+shape=tk.Frame(root)
+shape.pack()
+button7=tk.Button(shape,text="7",command=lambda: input1(7),width=12,height=4)
+button7.grid(row=0,column=0)
+button8=tk.Button(shape,text="8",command=lambda: input1(8),width=12,height=4)
+button8.grid(row=0,column=1)
+button9=tk.Button(shape,text="9",command=lambda: input1(9),width=12,height=4)
+button9.grid(row=0,column=2)
+button4=tk.Button(shape,text="4",command=lambda: input1(4),width=12,height=4)
+button4.grid(row=1,column=0)
+button5=tk.Button(shape,text="5",command=input1(5),width=12,height=4)
+button5.grid(row=1,column=1)
+button6=tk.Button(shape,text="6",command=lambda: input1(6),width=12,height=4)
+button6.grid(row=1,column=2)
+button1=tk.Button(shape,text="1",command=lambda: input1(1),width=12,height=4)
+button1.grid(row=2,column=0)
+button2=tk.Button(shape,text="2",command=lambda: input1(2),width=12,height=4)
+button2.grid(row=2,column=1)
+button3=tk.Button(shape,text="3",command=lambda: input1(3),width=12,height=4)
+button3.grid(row=2,column=2)
+button0=tk.Button(shape,text="0",command=lambda: input1(0),width=12,height=4)
+button0.grid(row=3,column=0)
+buttonc=tk.Button(shape,text="c",command=numc,width=12,height=4)
+buttonc.grid(row=3,column=1)
+buttone=tk.Button(shape,text="=",command=nume,width=12,height=4)
+buttone.grid(row=3,column=2)
+buttond=tk.Button(shape,text="/",command=lambda: input1("/"),width=9,height=4)
+buttond.grid(row=0,column=3)
+buttonm=tk.Button(shape,text="*",command=lambda: input1("*"),width=9,height=4)
+buttonm.grid(row=1,column=3)
+buttons=tk.Button(shape,text="-",command=lambda: input1("-"),width=9,height=4)
+buttons.grid(row=2,column=3)
+buttona=tk.Button(shape,text="+",command=lambda: input1("+"),width=9,height=4)
+buttona.grid(row=3,column=3)
+root.mainloop()
